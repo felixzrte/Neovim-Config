@@ -8,7 +8,7 @@ Basic Neovim configuration
 
 ## Installation
 
-First clone the repo to '~/.config/nvim'
+First clone the repo to `~/.config/nvim`
 
 ```
 git clone https://github.com/felixzrte/Neovim-Config.git
