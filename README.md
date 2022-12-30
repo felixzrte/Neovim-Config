@@ -11,7 +11,7 @@ Basic Neovim configuration
 First clone the repo to `~/.config/nvim`
 
 ```
-git clone https://github.com/felixzrte/Neovim-Config.git
+git clone https://github.com/felixzrte/Neovim-Config.git ~/.config/nvim
 ```
 
 Then open nvim and do a quick :PackerSync
