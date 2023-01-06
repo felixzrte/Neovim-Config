@@ -3,15 +3,16 @@ vim.g.mapleader = " "
 
 local keymap = vim.keymap -- for conciseness
 
+local opts = { noremap = true, silent = true }
 ---------------------
 -- General Keymaps
 ---------------------
 
 -- Delete a word backwards
-keymap.set('n', 'dw', 'vb"_d')
+keymap.set("n", "dw", 'vb"_d')
 
 -- Select all
-keymap.set('n', '<C-a>', 'gg<S-v>G')
+keymap.set("n", "<C-a>", "gg<S-v>G")
 
 -- clear search highlights
 keymap.set("n", "<leader>nh", ":nohl<CR>")
@@ -28,11 +29,6 @@ keymap.set("n", "<leader>sv", "<C-w>v") -- split window vertically
 keymap.set("n", "<leader>sh", "<C-w>s") -- split window horizontally
 keymap.set("n", "<leader>se", "<C-w>=") -- make split windows equal width & height
 keymap.set("n", "<leader>sx", ":close<CR>") -- close current split window
-
-keymap.set("n", "<leader>to", ":tabnew<CR>") -- open new tab
-keymap.set("n", "<leader>tx", ":tabclose<CR>") -- close current tab
-keymap.set("n", "<leader>tn", ":tabn<CR>") --  go to next tab
-keymap.set("n", "<leader>tp", ":tabp<CR>") --  go to previous tab
 
 ----------------------
 -- Plugin Keybinds
@@ -59,3 +55,20 @@ keymap.set("n", "<leader>gs", "<cmd>Telescope git_status<cr>") -- list current c
 
 -- restart lsp server (not on youtube nvim video)
 keymap.set("n", "<leader>rs", ":LspRestart<CR>") -- mapping to restart lsp if necessary
+
+-- Move to previous/next
+keymap.set("n", "<C-[>", "<Cmd>BufferPrevious<CR>", opts)
+keymap.set("n", "<C-]>", "<Cmd>BufferNext<CR>", opts)
+
+-- Pin/unpin buffer
+keymap.set("n", "<C-p>", "<Cmd>BufferPin<CR>", opts)
+-- Close buffer
+keymap.set("n", "<C-c>", "<Cmd>BufferClose<CR>", opts)
+-- Wipeout buffer
+--                 :BufferWipeout
+-- Close commands
+--                 :BufferCloseAllButCurrent
+--                 :BufferCloseAllButPinned
+--                 :BufferCloseAllButCurrentOrPinned
+--                 :BufferCloseBuffersLeft
+--                 :BufferCloseBuffersRight
